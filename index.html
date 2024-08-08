@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+
 </head>
 <body>
     <section class="nes-container with-title is-centered">
@@ -15,6 +19,12 @@
         <button type="button" class="nes-btn is-primary">Click Me!</button>
     </section>
     <!-- Eight slots -->
+
+    <div class="nes-container is-dark with-title">
+        <p class="title">Container.is-dark</p>
+        <p>Good morning. Thou hast had a good night's sleep, I hope.</p>
+      </div>
+
     <section class="nes-container with-title is-centered">
         <div class="nes-container is-dark with-title">
             <p class="title">Slot 1</p>
