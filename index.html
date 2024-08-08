@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title | default: site.title }}</title>
+    <title>Project Slots</title>
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
 
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
@@ -18,46 +18,74 @@
         </div>
         <button type="button" class="nes-btn is-primary">Click Me!</button>
     </section>
-    <!-- Eight slots -->
 
     <div class="nes-container is-dark with-title">
         <p class="title">Container.is-dark</p>
         <p>Good morning. Thou hast had a good night's sleep, I hope.</p>
-      </div>
+    </div>
 
     <section class="nes-container with-title is-centered">
-        <div class="nes-container is-dark with-title">
-            <p class="title">Slot 1</p>
-            <p>Content for slot 1.</p>
-        </div>
-        <div class="nes-container is-dark with-title">
-            <p class="title">Slot 2</p>
-            <p>Content for slot 2.</p>
-        </div>
-        <div class="nes-container is-dark with-title">
-            <p class="title">Slot 3</p>
-            <p>Content for slot 3.</p>
-        </div>
-        <div class="nes-container is-dark with-title">
-            <p class="title">Slot 4</p>
-            <p>Content for slot 4.</p>
-        </div>
-        <div class="nes-container is-dark with-title">
-            <p class="title">Slot 5</p>
-            <p>Content for slot 5.</p>
-        </div>
-        <div class="nes-container is-dark with-title">
-            <p class="title">Slot 6</p>
-            <p>Content for slot 6.</p>
-        </div>
-        <div class="nes-container is-dark with-title">
-            <p class="title">Slot 7</p>
-            <p>Content for slot 7.</p>
-        </div>
-        <div class="nes-container is-dark with-title">
-            <p class="title">Slot 8</p>
-            <p>Content for slot 8.</p>
-        </div>
+        <a href="#" class="nes-container is-dark with-title">
+            <p class="title">GitHub Repository</p>
+            <p>Content for GitHub Repository.</p>
+        </a>
+        <a href="#" class="nes-container is-dark with-title">
+            <p class="title">Brainstorm Board</p>
+            <p>Content for Brainstorm Board.</p>
+        </a>
+        <a href="#" class="nes-container is-dark with-title">
+            <p class="title">Pitch Slide</p>
+            <p>Content for Pitch Slide.</p>
+        </a>
+        <a href="#" class="nes-container is-dark with-title">
+            <p class="title">Pitch Video</p>
+            <p>Content for Pitch Video.</p>
+        </a>
+        <a href="#" class="nes-container is-dark with-title">
+            <p class="title">Scrum Trello</p>
+            <p>Content for Scrum Trello.</p>
+        </a>
+        <a href="#" class="nes-container is-dark with-title">
+            <p class="title">Burndown Chart</p>
+            <p>Content for Burndown Chart.</p>
+        </a>
+        <a href="#" class="nes-container is-dark with-title">
+            <p class="title">Narrative Synopsis</p>
+            <p>Content for Narrative Synopsis.</p>
+        </a>
+        <a href="#" class="nes-container is-dark with-title">
+            <p class="title">Character Profile</p>
+            <p>Content for Character Profile.</p>
+        </a>
+        <a href="#" class="nes-container is-dark with-title">
+            <p class="title">Branching Narrative</p>
+            <p>Content for Branching Narrative.</p>
+        </a>
+        <a href="#" class="nes-container is-dark with-title">
+            <p class="title">Level Design</p>
+            <p>Content for Level Design.</p>
+        </a>
+        <a href="#" class="nes-container is-dark with-title">
+            <p class="title">Playtest Session</p>
+            <p>Content for Playtest Session.</p>
+        </a>
+        <a href="#" class="nes-container is-dark with-title">
+            <p class="title">Final Game</p>
+            <p>Content for Final Game.</p>
+        </a>
+        <a href="#" class="nes-container is-dark with-title">
+            <p class="title">Game Design Document</p>
+            <p>Content for Game Design Document.</p>
+        </a>
     </section>
+
+    <script>
+        document.querySelectorAll('.nes-container').forEach(container => {
+            container.addEventListener('click', (event) => {
+                event.preventDefault();
+                alert(container.querySelector('.title').textContent + ' clicked!');
+            });
+        });
+    </script>
 </body>
 </html>
