@@ -1,0 +1,12 @@
+title: Retro Game Docs
+description: A retro-styled documentation site for a video game.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://your-username.github.io" # the base hostname & protocol for your site
+theme: minima
+plugins:
+  - jekyll-sass-converter
+  - jekyll-paginate
+  - jekyll-seo-tag
+paginate: 5
+sass:
+  style: compressed

@@ -1,0 +1,22 @@
+@import "nes.min";
+@import "https://fonts.googleapis.com/css?family=Press+Start+2P";
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.nes-container {
+    margin-bottom: 20px;
+}
+
+.nes-container .title {
+    color: white;
+}
