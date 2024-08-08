@@ -16,29 +16,67 @@
         <table class="nes-table is-bordered is-dark">
           <thead>
             <tr>
-              <th>Table.is-dark</th>
-              <th>Table.is-bordered</th>
+              <th>Project Slot</th>
+              <th>Description</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Github Repository <i class="nes-icon github is-large"></i> </td>
-              <td>Thou hast had a good afternon</td>
+              <td>Github Repository</td>
+              <td><i class="nes-icon github is-large"></i> Version control and code management</td>
             </tr>
             <tr>
-              <td>Thou hast had a good morning</td>
-              <td>Thou hast had a good afternoon</td>
+              <td>Trello Brainstorm</td>
+              <td>Initial ideas and brainstorming sessions</td>
+            </tr>
+            <tr>
+              <td>Pitch Video</td>
+              <td>Video presentation of the project concept</td>
+            </tr>
+            <tr>
+              <td>Pitch Slide</td>
+              <td>Slide deck for project pitch</td>
+            </tr>
+            <tr>
+              <td>Scrum Board</td>
+              <td>Agile project management board</td>
+            </tr>
+            <tr>
+              <td>Burndown Chart</td>
+              <td>Tracking project progress over time</td>
+            </tr>
+            <tr>
+              <td>Story Synopsis</td>
+              <td>High-level overview of the project's story</td>
+            </tr>
+            <tr>
+              <td>Character Synopsis</td>
+              <td>Details about the main characters</td>
+            </tr>
+            <tr>
+              <td>Branching Narrative</td>
+              <td>Outline of the narrative branches</td>
+            </tr>
+            <tr>
+              <td>Level Maps</td>
+              <td>Design maps for game levels</td>
+            </tr>
+            <tr>
+              <td>GDD</td>
+              <td>Game Design Document</td>
+            </tr>
+            <tr>
+              <td>Play Game</td>
+              <td>Final playtest session</td>
             </tr>
           </tbody>
         </table>
-      </div>
-
+    </div>
 
     <script>
-        document.querySelectorAll('.nes-container').forEach(container => {
-            container.addEventListener('click', (event) => {
-                event.preventDefault();
-                alert(container.querySelector('.title').textContent + ' clicked!');
+        document.querySelectorAll('.nes-table td').forEach(cell => {
+            cell.addEventListener('click', () => {
+                alert(cell.textContent.trim() + ' clicked!');
             });
         });
     </script>
