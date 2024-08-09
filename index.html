@@ -16,62 +16,103 @@
         <table class="nes-table is-bordered is-dark">
           <thead>
             <tr>
-              <th>Projects
-              <div></div>
-              </th>
+              <th>Projects</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-
               <td>    
-                <div class="nes-container is-rounded is-dark">
-                <p>Github Repository <div></div> <i class="nes-icon github is-large"></i> </p>
-              </div>
-            </td>
-
-               <td>    
-                <div class="nes-container is-rounded is-dark">
-                <p>Pitch Video <div></div> <i class="nes-icon youtube is-large"></i> </p>
-              </div>
-            </td>
-
-
-        <td>    
-                <div class="nes-container is-rounded is-dark">
-                <p>Pitch Video <div></div> <i class="nes-icon youtube is-large"></i> </p>
-              </div>
-            </td>
-            <td>    
-          
-                <div class="nes-container is-rounded is-dark">
-                <p>Pitch Video <div></div> <i class="nes-icon youtube is-large"></i> </p>
-              </div>
-            </td>
-
-</tr>     
+                <a href="#" class="nes-container is-rounded is-dark">
+                    <p>Github Repository <i class="nes-icon github is-large"></i></p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>    
+                <a href="#" class="nes-container is-rounded is-dark">
+                    <p>Trello Brainstorm <img src="path/to/trello-icon.png" class="custom-icon"></p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>    
+                <a href="#" class="nes-container is-rounded is-dark">
+                    <p>Pitch Video <i class="nes-icon youtube is-large"></i></p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>    
+                <a href="#" class="nes-container is-rounded is-dark">
+                    <p>Pitch Slide <img src="path/to/slide-icon.png" class="custom-icon"></p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>    
+                <a href="#" class="nes-container is-rounded is-dark">
+                    <p>Scrum Board <img src="path/to/scrum-icon.png" class="custom-icon"></p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>    
+                <a href="#" class="nes-container is-rounded is-dark">
+                    <p>Burndown Chart <img src="path/to/chart-icon.png" class="custom-icon"></p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>    
+                <a href="#" class="nes-container is-rounded is-dark">
+                    <p>Story Synopsis <img src="path/to/story-icon.png" class="custom-icon"></p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>    
+                <a href="#" class="nes-container is-rounded is-dark">
+                    <p>Character Synopsis <img src="path/to/character-icon.png" class="custom-icon"></p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>    
+                <a href="#" class="nes-container is-rounded is-dark">
+                    <p>Branching Narrative <img src="path/to/narrative-icon.png" class="custom-icon"></p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>    
+                <a href="#" class="nes-container is-rounded is-dark">
+                    <p>Level Maps <img src="path/to/level-icon.png" class="custom-icon"></p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>    
+                <a href="#" class="nes-container is-rounded is-dark">
+                    <p>GDD <img src="path/to/gdd-icon.png" class="custom-icon"></p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>    
+                <a href="#" class="nes-container is-rounded is-dark">
+                    <p>Play Game <img src="path/to/play-icon.png" class="custom-icon"></p>
+                </a>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
-
-
-      Trello Brainstorm
-      Pitch Video
-      Pitch Slide
-      Scrum Board
-      Burndown Chart
-      Story Synopsis
-      Character Synopsis
-      Branching Narrative
-      Level Maps
-      GDD
-      Play Game
 
     <script>
         document.querySelectorAll('.nes-container').forEach(container => {
             container.addEventListener('click', (event) => {
                 event.preventDefault();
-                alert(container.querySelector('.title').textContent + ' clicked!');
+                alert(container.textContent.trim() + ' clicked!');
             });
         });
     </script>
