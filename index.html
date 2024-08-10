@@ -92,21 +92,50 @@
 
         /* Pokemon Animation */
         @keyframes fadeInOut {
-            0% { opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { opacity: 0; }
+            0% { opacity: 0; transform: scale(0.5); }
+            10% { opacity: 1; transform: scale(1); }
+            90% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.5); }
+        }
+
+        @keyframes dustCloud {
+            0% { opacity: 0; transform: scale(0.5) translateY(20px); }
+            50% { opacity: 1; transform: scale(1) translateY(-10px); }
+            100% { opacity: 0; transform: scale(0.5) translateY(20px); }
         }
 
         .pokemon-display {
             display: none;
             margin-top: 20px;
             animation: fadeInOut 3s ease-in-out;
+            position: relative;
         }
 
         .pokemon-display i {
             font-size: 4em;
             display: block;
+        }
+
+        .dust-cloud {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50%;
+            opacity: 0;
+            animation: dustCloud 3s ease-in-out;
+        }
+
+        .dust-cloud:nth-child(2) {
+            left: 45%;
+            animation-delay: 0.1s;
+        }
+
+        .dust-cloud:nth-child(3) {
+            left: 55%;
+            animation-delay: 0.2s;
         }
     </style>
 </head>
@@ -120,7 +149,7 @@
 
         <!-- View Creator Button -->
         <div class="view-creator-btn">
-            <button type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-dark-rounded').showModal();">
+            <button type="button" class="nes-btn is-primary" id="view-creator-btn">
                 View Creator
             </button>
         </div>
@@ -221,6 +250,9 @@
             <i class="nes-pokeball" onclick="showPokemon()"></i>
             <div class="pokemon-display">
                 <i class="nes-squirtle"></i>
+                <div class="dust-cloud"></div>
+                <div class="dust-cloud"></div>
+                <div class="dust-cloud"></div>
             </div>
         </div>
     </div>
@@ -242,6 +274,10 @@
     </section>
 
     <script>
+        document.getElementById('view-creator-btn').addEventListener('click', function() {
+            document.getElementById('dialog-dark-rounded').showModal();
+        });
+
         function showPokemon() {
             const pokemonDisplay = document.querySelector('.pokemon-display');
             pokemonDisplay.style.display = 'block';
