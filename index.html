@@ -257,20 +257,22 @@
         </div>
     </div>
 
-    <!-- Creators Section with Dialog -->
     <section>
-        <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
-            <form method="dialog">
-                <p class="title">Gloam Creators</p>
-                <p>Wolfgang Romanowski</p>
-                <p>Gmail: 20101931@wit.ie</p>
-                <p>Github: <a href="https://github.com/WolfgangRomanowski" class="link-color">WolfgangRomanowski</a></p>
-                <menu class="dialog-menu">
-                    <button class="nes-btn">Cancel</button>
-                    <button class="nes-btn is-primary">Confirm</button>
-                </menu>
-            </form>
-        </dialog>
+      <button type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-dark-rounded').showModal();">
+          View Creator Info
+      </button>
+      <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
+        <form method="dialog">
+          <p class="title">Dark and Rounded dialog</p>
+          <p>Name: Wolfgang Romanowski
+             Gmail: 20101931@mail.wit.ie
+             Github: WolfgangRomanowski
+          </p>
+          <menu class="dialog-menu">
+            <button class="nes-btn">Cancel</button>
+          </menu>
+        </form>
+      </dialog>
     </section>
 
     <script>
