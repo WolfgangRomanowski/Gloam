@@ -90,12 +90,44 @@
             margin: 10px 0;
         }
 
-        /* Pokemon Animation */
+        /* Pokémon Animation */
+        .view-pokemon {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nes-pokeball {
+            cursor: pointer;
+            font-size: 3em;
+        }
+
+        .pokemon-display {
+            display: none;
+            position: absolute;
+            left: 50px;
+            bottom: 0;
+            animation: fadeInOut 3s ease-in-out, slideIn 3s ease-in-out;
+            image-rendering: pixelated;
+        }
+
+        .pokemon-display i {
+            font-size: 4em;
+            display: block;
+        }
+
+        /* Animation keyframes */
         @keyframes fadeInOut {
-            0% { opacity: 0; transform: scale(0.5); }
-            10% { opacity: 1; transform: scale(1); }
-            90% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(0.5); }
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(-20px); }
+            10% { transform: translateX(0); }
+            90% { transform: translateX(0); }
+            100% { transform: translateX(-20px); }
         }
 
         @keyframes dustCloud {
@@ -104,24 +136,11 @@
             100% { opacity: 0; transform: scale(0.5) translateY(20px); }
         }
 
-        .pokemon-display {
-            display: none;
-            margin-top: 20px;
-            animation: fadeInOut 3s ease-in-out;
-            position: relative;
-        }
-
-        .pokemon-display i {
-            font-size: 4em;
-            display: block;
-        }
-
         .dust-cloud {
             position: absolute;
             bottom: -20px;
-            left: 50%;
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             background-color: #fff;
             border-radius: 50%;
             opacity: 0;
@@ -129,12 +148,12 @@
         }
 
         .dust-cloud:nth-child(2) {
-            left: 45%;
+            left: 15px;
             animation-delay: 0.1s;
         }
 
         .dust-cloud:nth-child(3) {
-            left: 55%;
+            left: 35px;
             animation-delay: 0.2s;
         }
     </style>
@@ -148,11 +167,23 @@
         </div>
 
         <!-- View Creator Button -->
-        <div class="view-creator-btn">
-            <button type="button" class="nes-btn is-primary" id="view-creator-btn">
-                View Creator
+        <section>
+            <button type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-dark-rounded').showModal();">
+                View Creator Info
             </button>
-        </div>
+            <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
+                <form method="dialog">
+                    <p class="title">Dark and Rounded dialog</p>
+                    <p>Name: Wolfgang Romanowski
+                        <br>Gmail: 20101931@mail.wit.ie
+                        <br>Github: WolfgangRomanowski
+                    </p>
+                    <menu class="dialog-menu">
+                        <button class="nes-btn">Cancel</button>
+                    </menu>
+                </form>
+            </dialog>
+        </section>
 
         <div class="nes-table-responsive">
             <table class="nes-table is-bordered is-dark">
@@ -257,29 +288,8 @@
         </div>
     </div>
 
-    <section>
-      <button type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-dark-rounded').showModal();">
-          View Creator Info
-      </button>
-      <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
-        <form method="dialog">
-          <p class="title">Dark and Rounded dialog</p>
-          <p>Name: Wolfgang Romanowski
-             Gmail: 20101931@mail.wit.ie
-             Github: WolfgangRomanowski
-          </p>
-          <menu class="dialog-menu">
-            <button class="nes-btn">Cancel</button>
-          </menu>
-        </form>
-      </dialog>
-    </section>
 
     <script>
-        document.getElementById('view-creator-btn').addEventListener('click', function() {
-            document.getElementById('dialog-dark-rounded').showModal();
-        });
-
         function showPokemon() {
             const pokemonDisplay = document.querySelector('.pokemon-display');
             pokemonDisplay.style.display = 'block';
