@@ -43,6 +43,10 @@
             margin-bottom: 40px;
         }
 
+        .nes-table {
+            background-color: rgba(33, 37, 41, 0.85); /* Transparent table */
+        }
+
         .nes-table td,
         .nes-table th {
             padding: 20px;
@@ -78,6 +82,22 @@
             image-rendering: pixelated;
             margin: 10px 0;
         }
+
+        .decorative-section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(33, 37, 41, 0.75); /* Semi-transparent background */
+            border-radius: 10px;
+        }
+
+        .decorative-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .nes-btn.is-primary {
+            margin-top: 20px;
+        }
     </style>
 </head>
 
@@ -95,7 +115,7 @@
                         <td>
                             <div class="nes-container is-rounded is-dark">
                                 <i class="nes-icon github is-large"></i>
-                                <a href="#" class="link-color">Github Repository</a>
+                                <a href="https://github.com/WolfgangRomanowski/Gloam" class="link-color">Github Repository</a>
                             </div>
                         </td>
                         <td>
@@ -178,6 +198,33 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Creators Section with Dialog -->
+        <section class="decorative-section">
+            <h2>Meet the Creators</h2>
+            <p>Click the button below to learn more about the team behind Gloam.</p>
+            <button type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-dark-rounded').showModal();">
+                Open Creators Dialog
+            </button>
+            <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
+                <form method="dialog">
+                    <p class="title">Gloam Creators</p>
+                    <p>This game is brought to you by a passionate team of developers, designers, and storytellers. Each member has brought unique skills and creativity to make Gloam a reality.</p>
+                    <menu class="dialog-menu">
+                        <button class="nes-btn">Close</button>
+                    </menu>
+                </form>
+            </dialog>
+        </section>
+
+        <!-- Decorative Section for Extra Content -->
+        <section class="decorative-section">
+            <h2>Project Highlights</h2>
+            <p>Explore the key features and highlights of Gloam, including intricate storylines, branching narratives, and detailed level maps. This section provides a glimpse into what makes Gloam a unique text-based adventure.</p>
+            <i class="nes-icon is-large star"></i>
+            <i class="nes-icon is-large heart"></i>
+            <i class="nes-icon is-large trophy"></i>
+        </section>
     </div>
 
     <script>
