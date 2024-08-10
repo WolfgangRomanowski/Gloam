@@ -104,7 +104,7 @@
         .pokemon-display {
             display: none;
             position: absolute;
-            left: 50px;
+            left: 65px; /* Slightly further from the Pokéball */
             bottom: 0;
             animation: fadeInOut 3s ease-in-out, slideIn 3s ease-in-out;
             image-rendering: pixelated;
@@ -142,7 +142,6 @@
             width: 20px;
             height: 20px;
             background-color: #fff;
-            border-radius: 50%;
             opacity: 0;
             animation: dustCloud 3s ease-in-out;
         }
@@ -168,7 +167,7 @@
 
         <!-- View Creator Button -->
         <section>
-            <button type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-dark-rounded').showModal();">
+            <button type="button" class="nes-btn is-primary" id="view-creator-btn">
                 View Creator Info
             </button>
             <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
@@ -290,6 +289,12 @@
 
 
     <script>
+        // Ensure the dialog opens correctly when the button is clicked
+        document.getElementById('view-creator-btn').addEventListener('click', function() {
+            document.getElementById('dialog-dark-rounded').showModal();
+        });
+
+        // Function to animate Squirtle appearing beside the Pokéball
         function showPokemon() {
             const pokemonDisplay = document.querySelector('.pokemon-display');
             pokemonDisplay.style.display = 'block';
