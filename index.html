@@ -58,6 +58,7 @@
             text-align: center;
             margin-bottom: 20px;
             transition: transform 0.2s ease;
+            cursor: pointer;
         }
 
         .nes-container:hover {
@@ -98,6 +99,27 @@
         .nes-btn.is-primary {
             margin-top: 20px;
         }
+
+        /* Pokemon Animation */
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .pokemon-display {
+            display: none;
+            margin-top: 20px;
+            animation: fadeInOut 3s ease-in-out;
+        }
+
+        .pokemon-display img {
+            max-width: 150px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
     </style>
 </head>
 
@@ -113,7 +135,7 @@
                 <tbody>
                     <tr>
                         <td>
-                            <div class="nes-container is-rounded is-dark">
+                            <div class="nes-container is-rounded is-dark" onclick="window.location.href='https://github.com/WolfgangRomanowski/Gloam'">
                                 <i class="nes-icon github is-large"></i>
                                 <a href="https://github.com/WolfgangRomanowski/Gloam" class="link-color">Github Repository</a>
                             </div>
@@ -209,7 +231,9 @@
             <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
                 <form method="dialog">
                     <p class="title">Gloam Creators</p>
-                    <p>This game is brought to you by a passionate team of developers, designers, and storytellers. Each member has brought unique skills and creativity to make Gloam a reality.</p>
+                    <p>Wolfgang Romanowski</p>
+                    <p>Gmail: 20101931@wit.ie</p>
+                    <p>Github: <a href="https://github.com/WolfgangRomanowski" class="link-color">WolfgangRomanowski</a></p>
                     <menu class="dialog-menu">
                         <button class="nes-btn">Close</button>
                     </menu>
@@ -221,9 +245,10 @@
         <section class="decorative-section">
             <h2>Project Highlights</h2>
             <p>Explore the key features and highlights of Gloam, including intricate storylines, branching narratives, and detailed level maps. This section provides a glimpse into what makes Gloam a unique text-based adventure.</p>
-            <i class="nes-icon is-large star"></i>
-            <i class="nes-icon is-large heart"></i>
-            <i class="nes-icon is-large trophy"></i>
+            <i class="nes-icon is-large pokeball" onclick="showPokemon()"></i>
+            <div class="pokemon-display">
+                <img src="https://unpkg.com/nes.css/assets/pokemon/025.png" alt="Pikachu">
+            </div>
         </section>
     </div>
 
@@ -231,9 +256,16 @@
         document.querySelectorAll('.nes-container').forEach(container => {
             container.addEventListener('click', (event) => {
                 event.preventDefault();
-                alert(container.textContent.trim() + ' clicked!');
             });
         });
+
+        function showPokemon() {
+            const pokemonDisplay = document.querySelector('.pokemon-display');
+            pokemonDisplay.style.display = 'block';
+            setTimeout(() => {
+                pokemonDisplay.style.display = 'none';
+            }, 3000);
+        }
     </script>
 </body>
 
