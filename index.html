@@ -1,151 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Slots</title>
+    <title>Gloam Project Hub</title>
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
-
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
 
     <style>
-        .custom-icon {
-            width: 48px;
-            height: 48px;
+        body {
+            background-color: #212529; /* Matching NES dark table background */
+            color: white;
+            font-family: 'Press Start 2P', cursive;
+            margin: 0;
+            padding: 20px;
         }
-        .nes-table {
-            margin: 0 auto; /* Center the table */
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
         }
-        .nes-table td, .nes-table th {
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #f8f9fa;
+        }
+
+        .nes-table-responsive {
+            margin-bottom: 40px;
+        }
+
+        .nes-table td,
+        .nes-table th {
             padding: 20px;
             vertical-align: top;
-            text-align: center; /* Center the content in the cells */
+            text-align: center;
         }
+
         .nes-container {
-            text-align: center; /* Center content within NES containers */
+            text-align: center;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease;
         }
+
+        .nes-container:hover {
+            transform: scale(1.05);
+        }
+
         .link-color {
-            color: white;
+            color: #f8f9fa;
             text-decoration: none;
+            display: block;
+            margin-top: 10px;
+            font-size: 1.1em;
         }
+
         .link-color:hover {
             text-decoration: underline;
         }
+
+        .custom-icon {
+            width: 64px;
+            height: 64px;
+            image-rendering: pixelated;
+            margin: 10px 0;
+        }
     </style>
 </head>
+
 <body>
+    <div class="container">
+        <div class="header">
+            <h1>Gloam Project Hub</h1>
+            <p>Your central hub for all things related to the Gloam adventure.</p>
+        </div>
 
-    <div class="nes-table-responsive">
-        <table class="nes-table is-bordered is-dark">
-          <thead>
-            <tr>
-              <th><div></div></th>
-              <th><div></div></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>    
-                <div class="nes-container is-rounded is-dark">
-                    <a href="#" class="link-color">Github Repository</a> 
-                    <div></div>
-                    <i class="nes-icon github is-large"></i>
-                </div>
-              </td>
-              <td>    
-                <div class="nes-container is-rounded is-dark">
-                    <a href="#" class="link-color">Trello Brainstorm</a> 
-                    <div></div>
-
-                    <img class="nes-avatar is-large custom-icon" alt="Trello Icon" src="https://imgs.search.brave.com/stjWrGXh0yjHahPRTlb3kE16aKHKLD7Vd3vu71GkLOU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbi1pY29ucy5j/b20vaWNvbnMyLzEz/ODEvUE5HLzk2L3Ry/ZWxsb185Mzk5Mi5w/bmc" style="image-rendering: pixelated; ">
-
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>    
-                <div class="nes-container is-rounded is-dark">
-                    <a href="#" class="link-color">Pitch Video</a> 
-                    <div></div>
-                    <i class="nes-icon youtube is-large"></i>
-                </div>
-              </td>
-              <td>    
-                <div class="nes-container is-rounded is-dark">
-                    <a href="#" class="link-color">Pitch Slide</a> 
-                    <div></div>
-                    <img class="nes-avatar is-large custom-icon" alt="Slides Icon" src="https://imgs.search.brave.com/IDQx5NkgSNnnlI0jbeRFFVnRvrDH3HMnHk0R7bK5jqY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mb250/cy5nc3RhdGljLmNv/bS9zL2kvcHJvZHVj/dGxvZ29zL3NsaWRl/c18yMDIwcTQvdjkv/MTkycHguc3Zn" style="image-rendering: pixelated; ">
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>    
-                <div class="nes-container is-rounded is-dark">
-                    <a href="#" class="link-color">Scrum Board</a> 
-                    <div></div>
-                    <img class="nes-avatar is-large custom-icon" alt="Scrum Icon" src="https://imgs.search.brave.com/lkS03kGRKt8HecKIT0avbiugPyKDlPUy-IAubxqwOFQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4w/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbGV0by1ibHVl/LXByb2plY3QtbWFu/YWdlbWVudC82NC9f/LTExLTUxMi5wbmc" style="image-rendering: pixelated; ">
-                </div>
-              </td>
-              <td>    
-                <div class="nes-container is-rounded is-dark">
-                    <a href="#" class="link-color">Burndown Chart</a> 
-                    <div></div>
-                    <img class="nes-avatar is-large custom-icon" alt="Burndown Icon" src="https://imgs.search.brave.com/ZE12TPCd5D-w97ejZoo8B-vBm_JPW55ow_aT3yDOVfI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzA5LzQwLzMw/LzM2MF9GXzEwOTQw/MzAxNV8zekRIV29O/R05NUTFudVJsUE1Q/ekhkUzJxOHNkMDIw/dC5qcGc" style="image-rendering: pixelated; ">
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>    
-                <div class="nes-container is-rounded is-dark">
-                    <a href="#" class="link-color">Story Synopsis</a> 
-                    <div></div>
-                    <img class="nes-avatar is-large custom-icon" alt="Story Icon" src="https://imgs.search.brave.com/a-joElGRYq5OaIlxLo_Brnnl3fTmsROnP0f_o53Meso/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA3LzIzLzUyLzQ1/LzM2MF9GXzcyMzUy/NDUxMF9CajJKZERv/VWFRTG40MmM0VENu/WWdsSlhQdnRJd1NJ/Zi5qcGc" style="image-rendering: pixelated; ">
-                </div>
-              </td>
-              <td>    
-                <div class="nes-container is-rounded is-dark">
-                    <a href="#" class="link-color">Character Synopsis</a> 
-                    <div></div>
-                    <img class="nes-avatar is-large custom-icon" alt="Character Icon" src="https://imgs.search.brave.com/UqIPtFQTN21z71iv43mJL78qBF20hlF1ovB4k3qLq5Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA2LzE5LzI2LzQ2/LzM2MF9GXzYxOTI2/NDY4MF94MlBCZEdM/RjU0c0ZlN2tUQnRB/dlpuUHlYZ3ZhUncw/WS5qcGc" style="image-rendering: pixelated; ">
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>    
-                <div class="nes-container is-rounded is-dark">
-                    <a href="#" class="link-color">Branching Narrative</a> 
-                    <div></div>
-                    <img class="nes-avatar is-large custom-icon" alt="Narrative Icon" src="https://imgs.search.brave.com/YT3yJxNLup0EI_sw-A23WcdIpymJUDYaUbhwNXanG9M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4x/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbWlzY2VsbGFu/ZW91cy0yNS1saW5l/LzEyOC9zdG9yeV90/YWxlX2ZhaXJ5dGFs/ZV9uYXJyYXRpdmVf/bm92ZWxfc2FnYV92/aWRlby0xMjgucG5n" style="image-rendering: pixelated; ">
-                </div>
-              </td>
-              <td>    
-                <div class="nes-container is-rounded is-dark">
-                    <a href="#" class="link-color">Level Maps</a> 
-                    <div></div>
-                    <img class="nes-avatar is-large custom-icon" alt="Maps Icon" src="https://imgs.search.brave.com/eswebpeyYj3XPVN2mO8hC_puAvdsrjuxeO9cRMdpkqU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA3LzM0LzgxLzA0/LzM2MF9GXzczNDgx/MDQzNl9rSzk0Qmlq/c3Zud3pnSTRLWkhj/Zk1nQ1o1SnJiSG43/ei5qcGc" style="image-rendering: pixelated; ">
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>    
-                <div class="nes-container is-rounded is-dark">
-                    <a href="#" class="link-color">GDD</a> 
-                    <div></div>
-                    <i class="nes-icon is-large star is-transparent"></i>
-                  </div>
-              </td>
-              <td>    
-                <div class="nes-container is-rounded is-dark">
-                    <a href="#" class="link-color">Play Game</a> 
-                    <div></div>
-                    <i class="nes-logo is-large"></i>
-                  </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <div class="nes-table-responsive">
+            <table class="nes-table is-bordered is-dark">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="nes-container is-rounded is-dark">
+                                <i class="nes-icon github is-large"></i>
+                                <a href="#" class="link-color">Github Repository</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nes-container is-rounded is-dark">
+                                <img class="custom-icon" alt="Trello Icon" src="https://imgs.search.brave.com/stjWrGXh0yjHahPRTlb3kE16aKHKLD7Vd3vu71GkLOU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbi1pY29ucy5j/b20vaWNvbnMyLzEz/ODEvUE5HLzk2L3Ry/ZWxsb185Mzk5Mi5w/bmc">
+                                <a href="#" class="link-color">Trello Brainstorm</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="nes-container is-rounded is-dark">
+                                <i class="nes-icon youtube is-large"></i>
+                                <a href="#" class="link-color">Pitch Video</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nes-container is-rounded is-dark">
+                                <img class="custom-icon" alt="Slides Icon" src="https://imgs.search.brave.com/IDQx5NkgSNnnlI0jbeRFFVnRvrDH3HMnHk0R7bK5jqY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mb250/cy5nc3RhdGljLmNv/bS9zL2kvcHJvZHVj/dGxvZ29zL3NsaWRl/c18yMDIwcTQvdjkv/MTkycHguc3Zn">
+                                <a href="#" class="link-color">Pitch Slide</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="nes-container is-rounded is-dark">
+                                <img class="custom-icon" alt="Scrum Icon" src="https://imgs.search.brave.com/lkS03kGRKt8HecKIT0avbiugPyKDlPUy-IAubxqwOFQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4w/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbGV0by1ibHVl/LXByb2plY3QtbWFu/YWdlbWVudC82NC9f/LTExLTUxMi5wbmc">
+                                <a href="#" class="link-color">Scrum Board</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nes-container is-rounded is-dark">
+                                <img class="custom-icon" alt="Burndown Icon" src="https://imgs.search.brave.com/ZE12TPCd5D-w97ejZoo8B-vBm_JPW55ow_aT3yDOVfI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzA5LzQwLzMw/LzM2MF9GXzEwOTQw/MzAxNV8zekRIV29O/R05NUTFudVJsUE1Q/ekhkUzJxOHNkMDIw/dC5qcGc">
+                                <a href="#" class="link-color">Burndown Chart</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="nes-container is-rounded is-dark">
+                                <img class="custom-icon" alt="Story Icon" src="https://imgs.search.brave.com/a-joElGRYq5OaIlxLo_Brnnl3fTmsROnP0f_o53Meso/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA3LzIzLzUyLzQ1/LzM2MF9GXzcyMzUy/NDUxMF9CajJKZERv/VWFRTG40MmM0VENu/WWdsSlhQdnRJd1NJ/Zi5qcGc">
+                                <a href="#" class="link-color">Story Synopsis</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nes-container is-rounded is-dark">
+                                <img class="custom-icon" alt="Character Icon" src="https://imgs.search.brave.com/UqIPtFQTN21z71iv43mJL78qBF20hlF1ovB4k3qLq5Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA2LzE5LzI2LzQ2/LzM2MF9GXzYxOTI2/NDY4MF94MlBCZEdM/RjU0c0ZlN2tUQnRB/dlpuUHlYZ3ZhUncw/WS5qcGc">
+                                <a href="#" class="link-color">Character Synopsis</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="nes-container is-rounded is-dark">
+                                <img class="custom-icon" alt="Narrative Icon" src="https://imgs.search.brave.com/YT3yJxNLup0EI_sw-A23WcdIpymJUDYaUbhwNXanG9M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4x/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbWlzY2VsbGFu/ZW91cy0yNS1saW5l/LzEyOC9zdG9yeV90/YWxlX2ZhaXJ5dGFs/ZV9uYXJyYXRpdmVf/bm92ZWxfc2FnYV92/aWRlby0xMjgucG5n">
+                                <a href="#" class="link-color">Branching Narrative</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nes-container is-rounded is-dark">
+                                <img class="custom-icon" alt="Maps Icon" src="https://imgs.search.brave.com/eswebpeyYj3XPVN2mO8hC_puAvdsrjuxeO9cRMdpkqU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA3LzM0LzgxLzA0/LzM2MF9GXzczNDgx/MDQzNl9rSzk0Qmlq/c3Zud3pnSTRLWkhj/Zk1nQ1o1SnJiSG43/ei5qcGc">
+                                <a href="#" class="link-color">Level Maps</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="nes-container is-rounded is-dark">
+                                <i class="nes-icon is-large star is-transparent"></i>
+                                <a href="#" class="link-color">GDD</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nes-container is-rounded is-dark">
+                                <i class="nes-icon nes-logo is-large"></i>
+                                <a href="#" class="link-color">Play Game</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <script>
         document.querySelectorAll('.nes-container').forEach(container => {
@@ -156,4 +189,5 @@
         });
     </script>
 </body>
+
 </html>
