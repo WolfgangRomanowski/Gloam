@@ -215,6 +215,14 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Pokéball and Squirtle at the Bottom -->
+        <div class="view-pokemon">
+            <i class="nes-pokeball" onclick="showPokemon()"></i>
+            <div class="pokemon-display">
+                <i class="nes-squirtle"></i>
+            </div>
+        </div>
     </div>
 
     <!-- Creators Section with Dialog -->
@@ -231,11 +239,13 @@
     </dialog>
 
     <script>
-        document.querySelectorAll('.nes-container').forEach(container => {
-            container.addEventListener('click', (event) => {
-                event.preventDefault();
-            });
-        });
+        function showPokemon() {
+            const pokemonDisplay = document.querySelector('.pokemon-display');
+            pokemonDisplay.style.display = 'block';
+            setTimeout(() => {
+                pokemonDisplay.style.display = 'none';
+            }, 3000);
+        }
     </script>
 </body>
 
