@@ -40,24 +40,8 @@
         }
 
         .view-creator-btn {
+            margin-top: 40px;
             margin-bottom: 40px;
-        }
-
-        .nes-table-responsive {
-            margin-bottom: 40px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .nes-table {
-            background-color: rgba(33, 37, 41, 0.85); /* Transparent table */
-        }
-
-        .nes-table td,
-        .nes-table th {
-            padding: 20px;
-            vertical-align: top;
-            text-align: center;
         }
 
         .nes-container {
@@ -65,6 +49,7 @@
             margin-bottom: 20px;
             transition: transform 0.2s ease;
             cursor: pointer;
+            background-color: rgba(33, 37, 41, 0.85); /* Transparent container */
         }
 
         .nes-container:hover {
@@ -94,6 +79,7 @@
         .view-pokemon {
             position: relative;
             display: inline-block;
+            margin-top: 40px;
         }
 
         .nes-pokeball {
@@ -104,7 +90,7 @@
         .pokemon-display {
             display: none;
             position: absolute;
-            left: 65px; /* Slightly further from the Pokéball */
+            left: 90px; /* Adjusted position for Squirtle */
             bottom: 0;
             animation: fadeInOut 3s ease-in-out, slideIn 3s ease-in-out;
             image-rendering: pixelated;
@@ -117,42 +103,76 @@
 
         /* Animation keyframes */
         @keyframes fadeInOut {
-            0% { opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { opacity: 0; }
+            0% {
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
         }
 
         @keyframes slideIn {
-            0% { transform: translateX(-20px); }
-            10% { transform: translateX(0); }
-            90% { transform: translateX(0); }
-            100% { transform: translateX(-20px); }
+            0% {
+                transform: translateX(-20px);
+            }
+
+            10% {
+                transform: translateX(0);
+            }
+
+            90% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-20px);
+            }
         }
 
         @keyframes dustCloud {
-            0% { opacity: 0; transform: scale(0.5) translateY(20px); }
-            50% { opacity: 1; transform: scale(1) translateY(-10px); }
-            100% { opacity: 0; transform: scale(0.5) translateY(20px); }
+            0% {
+                opacity: 0;
+                transform: scale(0.5) translateY(20px);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1) translateY(-10px);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0.5) translateY(20px);
+            }
         }
 
         .dust-cloud {
             position: absolute;
             bottom: -20px;
-            width: 20px;
-            height: 20px;
+            width: 30px; /* Increased size for better visibility */
+            height: 30px;
             background-color: #fff;
+            border-radius: 50%; /* Rounded cloud */
             opacity: 0;
             animation: dustCloud 3s ease-in-out;
         }
 
         .dust-cloud:nth-child(2) {
-            left: 15px;
+            left: 25px;
             animation-delay: 0.1s;
         }
 
         .dust-cloud:nth-child(3) {
-            left: 35px;
+            left: 50px;
             animation-delay: 0.2s;
         }
     </style>
@@ -165,114 +185,76 @@
             <p>Your central hub for all things related to the Gloam adventure.</p>
         </div>
 
-        <!-- View Creator Button -->
-        <section>
-            <button type="button" class="nes-btn is-primary" id="view-creator-btn">
-                View Creator Info
-            </button>
-            <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
-                <form method="dialog">
-                    <p class="title">Dark and Rounded dialog</p>
-                    <p>Name: Wolfgang Romanowski
-                        <br>Gmail: 20101931@mail.wit.ie
-                        <br>Github: WolfgangRomanowski
-                    </p>
-                    <menu class="dialog-menu">
-                        <button class="nes-btn">Cancel</button>
-                    </menu>
-                </form>
-            </dialog>
-        </section>
+        <div class="nes-container is-rounded is-dark" onclick="window.location.href='https://github.com/WolfgangRomanowski/Gloam'">
+            <i class="nes-icon github is-large"></i>
+            <a href="https://github.com/WolfgangRomanowski/Gloam" class="link-color">Github Repository</a>
+            <a href="#" class="nes-badge"><span class="is-dark">Github</span></a>
+        </div>
 
-        <div class="nes-table-responsive">
-            <table class="nes-table is-bordered is-dark">
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="nes-container is-rounded is-dark" onclick="window.location.href='https://github.com/WolfgangRomanowski/Gloam'">
-                                <i class="nes-icon github is-large"></i>
-                                <a href="https://github.com/WolfgangRomanowski/Gloam" class="link-color">Github Repository</a>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="nes-container is-rounded is-dark">
-                                <img class="custom-icon" alt="Trello Icon" src="https://imgs.search.brave.com/stjWrGXh0yjHahPRTlb3kE16aKHKLD7Vd3vu71GkLOU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbi1pY29ucy5j/b20vaWNvbnMyLzEz/ODEvUE5HLzk2L3Ry/ZWxsb185Mzk5Mi5w/bmc">
-                                <a href="#" class="link-color">Trello Brainstorm</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="nes-container is-rounded is-dark">
-                                <i class="nes-icon youtube is-large"></i>
-                                <a href="#" class="link-color">Pitch Video</a>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="nes-container is-rounded is-dark">
-                                <img class="custom-icon" alt="Slides Icon" src="https://imgs.search.brave.com/IDQx5NkgSNnnlI0jbeRFFVnRvrDH3HMnHk0R7bK5jqY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mb250/cy5nc3RhdGljLmNv/bS9zL2kvcHJvZHVj/dGxvZ29zL3NsaWRl/c18yMDIwcTQvdjkv/MTkycHguc3Zn">
-                                <a href="#" class="link-color">Pitch Slide</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="nes-container is-rounded is-dark">
-                                <img class="custom-icon" alt="Scrum Icon" src="https://imgs.search.brave.com/lkS03kGRKt8HecKIT0avbiugPyKDlPUy-IAubxqwOFQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4w/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbGV0by1ibHVl/LXByb2plY3QtbWFu/YWdlbWVudC82NC9f/LTExLTUxMi5wbmc">
-                                <a href="#" class="link-color">Scrum Board</a>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="nes-container is-rounded is-dark">
-                                <img class="custom-icon" alt="Burndown Icon" src="https://imgs.search.brave.com/ZE12TPCd5D-w97ejZoo8B-vBm_JPW55ow_aT3yDOVfI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzA5LzQwLzMw/LzM2MF9GXzEwOTQw/MzAxNV8zekRIV29O/R05NUTFudVJsUE1Q/ekhkUzJxOHNkMDIw/dC5qcGc">
-                                <a href="#" class="link-color">Burndown Chart</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="nes-container is-rounded is-dark">
-                                <img class="custom-icon" alt="Story Icon" src="https://imgs.search.brave.com/a-joElGRYq5OaIlxLo_Brnnl3fTmsROnP0f_o53Meso/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA3LzIzLzUyLzQ1/LzM2MF9GXzcyMzUy/NDUxMF9CajJKZERv/VWFRTG40MmM0VENu/WWdsSlhQdnRJd1NJ/Zi5qcGc">
-                                <a href="#" class="link-color">Story Synopsis</a>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="nes-container is-rounded is-dark">
-                                <img class="custom-icon" alt="Character Icon" src="https://imgs.search.brave.com/UqIPtFQTN21z71iv43mJL78qBF20hlF1ovB4k3qLq5Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA2LzE5LzI2LzQ2/LzM2MF9GXzYxOTI2/NDY4MF94MlBCZEdM/RjU0c0ZlN2tUQnRB/dlpuUHlYZ3ZhUncw/WS5qcGc">
-                                <a href="#" class="link-color">Character Synopsis</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="nes-container is-rounded is-dark">
-                                <img class="custom-icon" alt="Narrative Icon" src="https://imgs.search.brave.com/YT3yJxNLup0EI_sw-A23WcdIpymJUDYaUbhwNXanG9M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4x/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbWlzY2VsbGFu/ZW91cy0yNS1saW5l/LzEyOC9zdG9yeV90/YWxlX2ZhaXJ5dGFs/ZV9uYXJyYXRpdmVf/bm92ZWxfc2FnYV92/aWRlby0xMjgucG5n">
-                                <a href="#" class="link-color">Branching Narrative</a>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="nes-container is-rounded is-dark">
-                                <img class="custom-icon" alt="Maps Icon" src="https://imgs.search.brave.com/eswebpeyYj3XPVN2mO8hC_puAvdsrjuxeO9cRMdpkqU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA3LzM0LzgxLzA0/LzM2MF9GXzczNDgx/MDQzNl9rSzk0Qmlq/c3Zud3pnSTRLWkhj/Zk1nQ1o1SnJiSG43/ei5qcGc">
-                                <a href="#" class="link-color">Level Maps</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="nes-container is-rounded is-dark">
-                                <i class="nes-icon is-large star is-transparent"></i>
-                                <a href="#" class="link-color">GDD</a>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="nes-container is-rounded is-dark">
-                                <i class="nes-icon nes-logo is-small"></i>
-                                <a href="#" class="link-color">Play Game</a>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="nes-container is-rounded is-dark">
+            <img class="custom-icon" alt="Trello Icon" src="https://imgs.search.brave.com/stjWrGXh0yjHahPRTlb3kE16aKHKLD7Vd3vu71GkLOU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbi1pY29ucy5j/b20vaWNvbnMyLzEz/ODEvUE5HLzk2L3Ry/ZWxsb185Mzk5Mi5w/bmc">
+            <a href="#" class="link-color">Trello Brainstorm</a>
+            <a href="#" class="nes-badge"><span class="is-dark">Trello</span></a>
+        </div>
+
+        <div class="nes-container is-rounded is-dark">
+            <i class="nes-icon youtube is-large"></i>
+            <a href="#" class="link-color">Pitch Video</a>
+            <a href="#" class="nes-badge"><span class="is-dark">Video</span></a>
+        </div>
+
+        <div class="nes-container is-rounded is-dark">
+            <img class="custom-icon" alt="Slides Icon" src="https://imgs.search.brave.com/IDQx5NkgSNnnlI0jbeRFFVnRvrDH3HMnHk0R7bK5jqY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mb250/cy5nc3RhdGljLmNv/bS9zL2kvcHJvZHVj/dGxvZ29zL3NsaWRl/c18yMDIwcTQvdjkv/MTkycHguc3Zn">
+            <a href="#" class="link-color">Pitch Slide</a>
+            <a href="#" class="nes-badge"><span class="is-dark">Slides</span></a>
+        </div>
+
+        <div class="nes-container is-rounded is-dark">
+            <img class="custom-icon" alt="Scrum Icon" src="https://imgs.search.brave.com/lkS03kGRKt8HecKIT0avbiugPyKDlPUy-IAubxqwOFQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4w/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbGV0by1ibHVl/LXByb2plY3QtbWFu/YWdlbWVudC82NC9f/LTExLTUxMi5wbmc">
+            <a href="#" class="link-color">Scrum Board</a>
+            <a href="#" class="nes-badge"><span class="is-dark">Scrum</span></a>
+        </div>
+
+        <div class="nes-container is-rounded is-dark">
+            <img class="custom-icon" alt="Burndown Icon" src="https://imgs.search.brave.com/ZE12TPCd5D-w97ejZoo8B-vBm_JPW55ow_aT3yDOVfI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzA5LzQwLzMw/LzM2MF9GXzEwOTQw/MzAxNV8zekRIV29O/R05NUTFudVJsUE1Q/ekhkUzJxOHNkMDIw/dC5qcGc">
+            <a href="#" class="link-color">Burndown Chart</a>
+            <a href="#" class="nes-badge"><span class="is-dark">Burndown</span></a>
+        </div>
+
+        <div class="nes-container is-rounded is-dark">
+            <img class="custom-icon" alt="Story Icon" src="https://imgs.search.brave.com/a-joElGRYq5OaIlxLo_Brnnl3fTmsROnP0f_o53Meso/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA3LzIzLzUyLzQ1/LzM2MF9GXzcyMzUy/NDUxMF9CajJKZERv/VWFRTG40MmM0VENu/WWdsSlhQdnRJd1NJ/Zi5qcGc">
+            <a href="#" class="link-color">Story Synopsis</a>
+            <a href="#" class="nes-badge"><span class="is-dark">Story</span></a>
+        </div>
+
+        <div class="nes-container is-rounded is-dark">
+            <img class="custom-icon" alt="Character Icon" src="https://imgs.search.brave.com/UqIPtFQTN21z71iv43mJL78qBF20hlF1ovB4k3qLq5Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA2LzE5LzI2LzQ2/LzM2MF9GXzYxOTI2/NDY4MF94MlBCZEdM/RjU0c0ZlN2tUQnRB/dlpuUHlYZ3ZhUncw/WS5qcGc">
+            <a href="#" class="link-color">Character Synopsis</a>
+            <a href="#" class="nes-badge"><span class="is-dark">Character</span></a>
+        </div>
+
+        <div class="nes-container is-rounded is-dark">
+            <img class="custom-icon" alt="Narrative Icon" src="https://imgs.search.brave.com/YT3yJxNLup0EI_sw-A23WcdIpymJUDYaUbhwNXanG9M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4x/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbWlzY2VsbGFu/ZW91cy0yNS1saW5l/LzEyOC9zdG9yeV90/YWxlX2ZhaXJ5dGFs/ZV9uYXJyYXRpdmVf/bm92ZWxfc2FnYV92/aWRlby0xMjgucG5n">
+            <a href="#" class="link-color">Branching Narrative</a>
+            <a href="#" class="nes-badge"><span class="is-dark">Narrative</span></a>
+        </div>
+
+        <div class="nes-container is-rounded is-dark">
+            <img class="custom-icon" alt="Maps Icon" src="https://imgs.search.brave.com/eswebpeyYj3XPVN2mO8hC_puAvdsrjuxeO9cRMdpkqU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA3LzM0LzgxLzA0/LzM2MF9GXzczNDgx/MDQzNl9rSzk0Qmlq/c3Zud3pnSTRLWkhj/Zk1nQ1o1SnJiSG43/ei5qcGc">
+            <a href="#" class="link-color">Level Maps</a>
+            <a href="#" class="nes-badge"><span class="is-dark">Maps</span></a>
+        </div>
+
+        <div class="nes-container is-rounded is-dark">
+            <i class="nes-icon is-large star is-transparent"></i>
+            <a href="#" class="link-color">GDD</a>
+            <a href="#" class="nes-badge"><span class="is-dark">GDD</span></a>
+        </div>
+
+        <div class="nes-container is-rounded is-dark">
+            <i class="nes-icon nes-logo is-small"></i>
+            <a href="#" class="link-color">Play Game</a>
+            <a href="#" class="nes-badge"><span class="is-dark">Game</span></a>
         </div>
 
         <!-- Pokéball and Squirtle at the Bottom -->
@@ -285,12 +267,43 @@
                 <div class="dust-cloud"></div>
             </div>
         </div>
-    </div>
 
+        <!-- View Creator Button -->
+        <section>
+            <button type="button" class="nes-btn is-primary view-creator-btn" id="view-creator-btn">
+                View Creator Info
+            </button>
+            <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
+                <form method="dialog">
+                    <p class="title">Continue to View Creator Info?</p>
+                    <label>
+                        <input type="radio" class="nes-radio" name="answer" checked />
+                        <span>Yes</span>
+                    </label>
+                    <label>
+                        <input type="radio" class="nes-radio" name="answer" />
+                        <span>No</span>
+                    </label>
+
+                    <menu class="dialog-menu">
+                        <button class="nes-btn is-primary" id="continue-btn">Continue</button>
+                        <button class="nes-btn">Cancel</button>
+                    </menu>
+                </form>
+
+                <div id="creator-info" style="display: none;">
+                    <p>Name: Wolfgang Romanowski
+                        <br>Gmail: 20101931@mail.wit.ie
+                        <br>Github: WolfgangRomanowski
+                    </p>
+                </div>
+            </dialog>
+        </section>
+    </div>
 
     <script>
         // Ensure the dialog opens correctly when the button is clicked
-        document.getElementById('view-creator-btn').addEventListener('click', function() {
+        document.getElementById('view-creator-btn').addEventListener('click', function () {
             document.getElementById('dialog-dark-rounded').showModal();
         });
 
@@ -302,6 +315,16 @@
                 pokemonDisplay.style.display = 'none';
             }, 3000);
         }
+
+        // Show creator info if user selects 'Yes'
+        document.getElementById('continue-btn').addEventListener('click', function () {
+            const yesRadio = document.querySelector('input[name="answer"]:checked');
+            if (yesRadio && yesRadio.nextElementSibling.innerText === 'Yes') {
+                document.getElementById('creator-info').style.display = 'block';
+            } else {
+                document.getElementById('dialog-dark-rounded').close();
+            }
+        });
     </script>
 </body>
 
