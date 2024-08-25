@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gloam Project Hub</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #212529; /* Matching NES dark table background */
+            color: white;
+            font-family: 'Press Start 2P', cursive;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #f8f9fa;
+        }
+
+        .view-creator-btn {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .nes-container {
+            text-align: center;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+            background-color: rgba(33, 37, 41, 0.85); /* Transparent container */
+        }
+
+        .nes-container:hover {
+            transform: scale(1.05);
+        }
+
+        .link-color {
+            color: #f8f9fa;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+
+        .link-color:hover {
+            text-decoration: underline;
+        }
+
+        .custom-icon {
+            width: 64px;
+            height: 64px;
+            image-rendering: pixelated;
+            margin: 10px 0;
+        }
+
+        /* Structure the containers in a grid layout */
+        .container-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Pokémon Animation */
+        .view-pokemon {
+            position: relative;
+            display: inline-block;
+            margin-top: 40px;
+        }
+
+        .nes-pokeball {
+            cursor: pointer;
+            font-size: 3em;
+        }
+
+        .pokemon-display {
+            display: none;
+            position: absolute;
+            left: 90px; /* Adjusted position for Squirtle */
+            bottom: 0;
+            animation: fadeInOut 3s ease-in-out, slideIn 3s ease-in-out;
+            image-rendering: pixelated;
+        }
+
+        .pokemon-display i {
+            font-size: 4em;
+            display: block;
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-20px);
+            }
+
+            10% {
+                transform: translateX(0);
+            }
+
+            90% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-20px);
+            }
+        }
+
+        @keyframes dustCloud {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) translateY(20px);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1) translateY(-10px);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0.5) translateY(20px);
+            }
+        }
+
+        .dust-cloud {
+            position: absolute;
+            bottom: -20px;
+            width: 30px; /* Increased size for better visibility */
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50%; /* Rounded cloud */
+            opacity: 0;
+            animation: dustCloud 3s ease-in-out;
+        }
+
+        .dust-cloud:nth-child(2) {
+            left: 25px;
+            animation-delay: 0.1s;
+        }
+
+        .dust-cloud:nth-child(3) {
+            left: 50px;
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Gloam Project Hub</h1>
+            <p>Your central hub for all things related to the Gloam adventure.</p>
+        </div>
+
+        <div class="container-grid">
+            <div class="nes-container is-rounded is-dark" onclick="window.location.href='https://github.com/WolfgangRomanowski/Gloam'">
+                <i class="nes-icon github is-large"></i>
+                <a href="https://github.com/WolfgangRomanowski/Gloam" class="link-color">Github Repository</a>
+                <a href="#" class="nes-badge"><span class="is-dark">Github</span></a>
+            </div>
+
+            <div class="nes-container is-rounded is-dark">
+                <img class="custom-icon" alt="Trello Icon" src="https://imgs.search.brave.com/stjWrGXh0yjHahPRTlb3kE16aKHKLD7Vd3vu71GkLOU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbi1pY29ucy5j/b20vaWNvbnMyLzEz/ODEvUE5HLzk2L3Ry/ZWxsb185Mzk5Mi5w/bmc">
+                <a href="#" class="link-color">Trello Brainstorm</a>
+                <a href="#" class="nes-badge"><span class="is-dark">Trello</span></a>
+            </div>
+
+            <div class="nes-container is-rounded is-dark">
+                <i class="nes-icon youtube is-large"></i>
+                <a href="#" class="link-color">Pitch Video</a>
+                <a href="#" class="nes-badge"><span class="is-dark">Video</span></a>
+            </div>
+
+            <div class="nes-container is-rounded is-dark">
+                <img class="custom-icon" alt="Slides Icon" src="https://imgs.search.brave.com/IDQx5NkgSNnnlI0jbeRFFVnRvrDH3HMnHk0R7bK5jqY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mb250/cy5nc3RhdGljLmNv/bS9zL2kvcHJvZHVj/dGxvZ29zL3NsaWRl/c18yMDIwcTQvdjkv/MTkycHguc3Zn">
+                <a href="#" class="link-color">Pitch Slide</a>
+                <a href="#" class="nes-badge"><span class="is-dark">Slides</span></a>
+            </div>
+
+            <div class="nes-container is-rounded is-dark">
+                <img class="custom-icon" alt="Scrum Icon" src="https://imgs.search.brave.com/lkS03kGRKt8HecKIT0avbiugPyKDlPUy-IAubxqwOFQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4w/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbGV0by1ibHVl/LXByb2plY3QtbWFu/YWdlbWVudC82NC9f/LTExLTUxMi5wbmc">
+                <a href="#" class="link-color">Scrum Board</a>
+                <a href="#" class="nes-badge"><span class="is-dark">Scrum</span></a>
+            </div>
+
+            <div class="nes-container is-rounded is-dark">
+                <img class="custom-icon" alt="Burndown Icon" src="https://imgs.search.brave.com/ZE12TPCd5D-w97ejZoo8B-vBm_JPW55ow_aT3yDOVfI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzA5LzQwLzMw/LzM2MF9GXzEwOTQw/MzAxNV8zekRIV29O/R05NUTFudVJsUE1Q/ekhkUzJxOHNkMDIw/dC5qcGc">
+                <a href="#" class="link-color">Burndown Chart</a>
+                <a href="#" class="nes-badge"><span class="is-dark">Burndown</span></a>
+            </div>
+
+            <div class="nes-container is-rounded is-dark">
+                <img class="custom-icon" alt="Story Icon" src="https://imgs.search.brave.com/a-joElGRYq5OaIlxLo_Brnnl3fTmsROnP0f_o53Meso/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA3LzIzLzUyLzQ1/LzM2MF9GXzcyMzUy/NDUxMF9CajJKZERv/VWFRTG40MmM0VENu/WWdsSlhQdnRJd1NJ/Zi5qcGc">
+                <a href="#" class="link-color">Story Synopsis</a>
+                <a href="#" class="nes-badge"><span class="is-dark">Story</span></a>
+            </div>
+
+            <div class="nes-container is-rounded is-dark">
+                <img class="custom-icon" alt="Character Icon" src="https://imgs.search.brave.com/UqIPtFQTN21z71iv43mJL78qBF20hlF1ovB4k3qLq5Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA2LzE5LzI2LzQ2/LzM2MF9GXzYxOTI2/NDY4MF94MlBCZEdM/RjU0c0ZlN2tUQnRB/dlpuUHlYZ3ZhUncw/WS5qcGc">
+                <a href="#" class="link-color">Character Synopsis</a>
+                <a href="#" class="nes-badge"><span class="is-dark">Character</span></a>
+            </div>
+
+            <div class="nes-container is-rounded is-dark">
+                <img class="custom-icon" alt="Narrative Icon" src="https://imgs.search.brave.com/YT3yJxNLup0EI_sw-A23WcdIpymJUDYaUbhwNXanG9M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4x/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbWlzY2VsbGFu/ZW91cy0yNS1saW5l/LzEyOC9zdG9yeV90/YWxlX2ZhaXJ5dGFs/ZV9uYXJyYXRpdmVf/bm92ZWxfc2FnYV92/aWRlby0xMjgucG5n">
+                <a href="#" class="link-color">Branching Narrative</a>
+                <a href="#" class="nes-badge"><span class="is-dark">Narrative</span></a>
+            </div>
+
+            <div class="nes-container is-rounded is-dark">
+                <img class="custom-icon" alt="Maps Icon" src="https://imgs.search.brave.com/eswebpeyYj3XPVN2mO8hC_puAvdsrjuxeO9cRMdpkqU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA3LzM0LzgxLzA0/LzM2MF9GXzczNDgx/MDQzNl9rSzk0Qmlq/c3Zud3pnSTRLWkhj/Zk1nQ1o1SnJiSG43/ei5qcGc">
+                <a href="#" class="link-color">Level Maps</a>
+                <a href="#" class="nes-badge"><span class="is-dark">Maps</span></a>
+            </div>
+
+            <div class="nes-container is-rounded is-dark">
+                <i class="nes-icon is-large star is-transparent"></i>
+                <a href="#" class="link-color">GDD</a>
+                <a href="#" class="nes-badge"><span class="is-dark">GDD</span></a>
+            </div>
+
+            <div class="nes-container is-rounded is-dark">
+                <i class="nes-icon nes-logo is-small"></i>
+                <a href="../Gloam-main/Game/index.html" class="link-color">Play Game</a>
+                <a href="../Gloam-main/Game/index.html" class="nes-badge"><span class="is-dark">Game</span></a>
+            </div>
+            
+        </div>
+
+        <!-- Pokéball and Squirtle at the Bottom -->
+        <div class="view-pokemon">
+            <i class="nes-pokeball" onclick="showPokemon()"></i>
+            <div class="pokemon-display">
+                <i class="nes-squirtle"></i>
+                <div class="dust-cloud"></div>
+                <div class="dust-cloud"></div>
+                <div class="dust-cloud"></div>
+            </div>
+        </div>
+
+        <!-- View Creator Button -->
+        <section>
+            <button type="button" class="nes-btn is-primary view-creator-btn" id="view-creator-btn">
+                View Creator Info
+            </button>
+            <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
+                <form method="dialog">
+                    <p class="title">Continue to View Creator Info?</p>
+                    <label>
+                        <input type="radio" class="nes-radio" name="answer" value="yes" />
+                        <span>Yes</span>
+                    </label>
+                    <label>
+                        <input type="radio" class="nes-radio" name="answer" value="no" checked />
+                        <span>No</span>
+                    </label>
+                </form>
+
+                <div id="creator-info" style="display: none;">
+                    <p>Name: Wolfgang Romanowski
+                        <br>Gmail: 20101931@mail.wit.ie
+                        <br>Github: WolfgangRomanowski
+                    </p>
+                </div>
+            </dialog>
+        </section>
+    </div>
+
+    <script>
+        // Ensure the dialog opens correctly when the button is clicked
+        document.getElementById('view-creator-btn').addEventListener('click', function () {
+            const dialog = document.getElementById('dialog-dark-rounded');
+            dialog.showModal();
+
+            const radioButtons = document.querySelectorAll('input[name="answer"]');
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function () {
+                    if (this.value === 'yes') {
+                        document.getElementById('creator-info').style.display = 'block';
+                    } else {
+                        dialog.close();
+                    }
+                });
+            });
+        });
+
+        // Function to animate Squirtle appearing beside the Pokéball
+        function showPokemon() {
+            const pokemonDisplay = document.querySelector('.pokemon-display');
+            pokemonDisplay.style.display = 'block';
+            setTimeout(() => {
+                pokemonDisplay.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>
